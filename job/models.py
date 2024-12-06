@@ -14,6 +14,9 @@ class Job(models.Model):
     experience = models.IntegerField(default=1)
     category = models.ForeignKey('Category',on_delete=models.CASCADE)
     
+    def upload_img():
+        return "jobs/%y/%m/%d"
+    image = models.ImageField(upload_to=upload_img ())
     def __str__(self):
         return self.title
     
